@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "windows",
+			"problemMatcher": [],
+			"label": "npm: windows",
+			"detail": "npx react-native run-windows"
+		}
+	]
+}
