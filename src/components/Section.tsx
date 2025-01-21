@@ -9,7 +9,7 @@ interface Props {
 
 function Section(props: Props) {
   if (props.values.length === 0 || !props.values[0]) {
-    return;
+    return null;
   }
   return (
       <Text selectable style={styles.textStyle}>{processString(props)}</Text>
