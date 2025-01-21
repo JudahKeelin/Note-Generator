@@ -166,6 +166,31 @@ const layout = StyleSheet.create({
   mr3: { marginRight: 12 },
   mr4: { marginRight: 16 },
   mr5: { marginRight: 20 },
+
+  // Height Settings for input fields
+  h1: { height: 35 },
+  h2: { height: 60 },
+  h3: { height: 80 },
+  h4: { height: 100 },
+  h5: { height: 120 },
+  h6: { height: 150 },
+  h7: { height: 175 },
+  h8: { height: 200 },
+  h9: { height: 250 },
+  h10: { height: 300 },
+
+  // Font Sizes
+  fs1: { fontSize: 12 },
+  fs2: { fontSize: 14 },
+  fs3: { fontSize: 16 },
+  fs4: { fontSize: 18 },
+  fs5: { fontSize: 20 },
+  fs6: { fontSize: 24 },
+  fs7: { fontSize: 30 },
+  fs8: { fontSize: 36 },
+  fs9: { fontSize: 48 },
+  fs10: { fontSize: 60 },
+
 });
 
 export default layout;

@@ -23,7 +23,6 @@ function App(): React.JSX.Element {
         question3: '',
         question4: '',
         question5: '',
-        question6: '',
     });
 
     const handleChange = (key: string, value: string) => {
@@ -45,10 +44,8 @@ function App(): React.JSX.Element {
             question3: '',
             question4: '',
             question5: '',
-            question6: '',
         });
     };
-
 
     return (
         <>
@@ -60,23 +57,23 @@ function App(): React.JSX.Element {
                     <View style={[layout.row, layout.justifyContentCenter]}>
                         <View style={[layout.col4, layout.p3]}>
                             <View style={[styles.innerBlock]}>
-                                <Text style={styles.label}>Name:</Text>
+                                <Text style={[layout.fs3, layout.mb2]}>Name:</Text>
                                 <TextInput
-                                    style={[styles.input, styles.textInput]}
+                                    style={[styles.input, layout.h1, layout.mb4]}
                                     placeholder="Enter your name"
                                     value={formData.name}
                                     onChangeText={(value) => handleChange('name', value)}
                                 />
-                                <Text style={styles.label}>Question 1:</Text>
+                                <Text style={[layout.fs3, layout.mb2]}>Question 1:</Text>
                                 <TextInput
-                                    style={[styles.input, styles.textInput]}
+                                    style={[styles.input, layout.h1, layout.mb4]}
                                     placeholder="Question 1"
                                     value={formData.question1}
                                     onChangeText={(value) => handleChange('question1', value)}
                                 />
-                                <Text style={styles.label}>Question 2:</Text>
+                                <Text style={[layout.fs3, layout.mb2]}>Question 2:</Text>
                                 <TextInput
-                                    style={[styles.input, styles.textInput]}
+                                    style={[styles.input, layout.h1, layout.mb4]}
                                     placeholder="Question 2"
                                     value={formData.question2}
                                     onChangeText={(value) => handleChange('question2', value)}
@@ -86,28 +83,28 @@ function App(): React.JSX.Element {
 
                         <View style={[layout.col4, layout.p3]}>
                             <View style={[styles.innerBlock]}>
-                                <Text style={styles.label}>Email:</Text>
+                                <Text style={[layout.fs3, layout.mb2]}>Email:</Text>
                                 <TextInput
-                                    style={[styles.input, styles.textInput]}
+                                    style={[styles.input, layout.h1, layout.mb4]}
                                     placeholder="Enter your email"
                                     value={formData.email}
                                     onChangeText={(value) => handleChange('email', value)}
                                     keyboardType="email-address"
                                 />
-                                <Text style={styles.label}>Question 3:</Text>
+                                <Text style={[layout.fs3, layout.mb2]}>Question 3:</Text>
                                 <TextInput
-                                    style={[styles.input, styles.textInput]}
+                                    style={[styles.input, layout.h1, layout.mb4]}
                                     placeholder="Question 3"
                                     value={formData.question3}
                                     onChangeText={(value) => handleChange('question3', value)}
                                 />
-                                <Text style={styles.label}>Category:</Text>
+                                <Text style={[layout.fs3, layout.mb2]}>Category:</Text>
                                 <Picker
                                     selectedValue={formData.category}
                                     onValueChange={(value) => handleChange('category', value)}
-                                    style={[styles.input, styles.picker]}
+                                    style={[styles.input, layout.h1, layout.mb4, {borderColor: 'black'}]}
                                 >
-                                    <Picker.Item label="Select a category" value="" />
+                                    <Picker.Item label="Select a category" value=""/>
                                     <Picker.Item label="General Inquiry" value="general" />
                                     <Picker.Item label="Technical Support" value="support" />
                                     <Picker.Item label="Feedback" value="feedback" />
@@ -117,27 +114,20 @@ function App(): React.JSX.Element {
 
                         <View style={[layout.col4, layout.p3]}>
                             <View style={[styles.innerBlock]}>
-                                <Text style={styles.label}>Message:</Text>
+                                <Text style={[layout.fs3, layout.mb2]}>Message:</Text>
                                 <TextInput
-                                    style={[styles.textArea, styles.input]}
+                                    style={[layout.h5, styles.input, layout.mb4]}
                                     placeholder="Enter your message"
                                     value={formData.message}
                                     onChangeText={(value) => handleChange('message', value)}
                                     multiline
                                 />
-                                <Text style={styles.label}>Question 4:</Text>
+                                <Text style={[layout.fs3, layout.mb2]}>Question 4:</Text>
                                 <TextInput
-                                    style={[styles.input, styles.textInput]}
+                                    style={[styles.input, layout.h1, layout.mb4]}
                                     placeholder="Question 4"
                                     value={formData.question4}
                                     onChangeText={(value) => handleChange('question4', value)}
-                                />
-                                <Text style={styles.label}>Question 5:</Text>
-                                <TextInput
-                                    style={[styles.input, styles.textInput]}
-                                    placeholder="Question 5"
-                                    value={formData.question5}
-                                    onChangeText={(value) => handleChange('question5', value)}
                                 />
                             </View>
                         </View>
@@ -146,12 +136,12 @@ function App(): React.JSX.Element {
                     <View style={[layout.row, layout.justifyContentCenter]}>
                         <View style={[layout.col12, layout.p3]}>
                             <View style={[styles.innerBlock]}>
-                                <Text style={styles.label}>Question 6:</Text>
+                                <Text style={[layout.fs3, layout.mb2]}>Question 5:</Text>
                                 <TextInput
-                                    style={[styles.input, styles.textInput]}
-                                    placeholder="Question 6"
-                                    value={formData.question6}
-                                    onChangeText={(value) => handleChange('question6', value)}
+                                    style={[styles.input, layout.h1, layout.mb4]}
+                                    placeholder="Question 5"
+                                    value={formData.question5}
+                                    onChangeText={(value) => handleChange('question5', value)}
                                 />
                             </View>
                         </View>
@@ -196,10 +186,6 @@ function App(): React.JSX.Element {
                                     statement="Question 5:\n   {{0}}\n"
                                     values={[formData.question5]}
                                 />
-                                <Section
-                                    statement="Question 6:\n   {{0}}\n"
-                                    values={[formData.question6]}
-                                />
                             </Text>
                         </View>
                     </View>
@@ -217,28 +203,11 @@ const styles = StyleSheet.create({
         height: '100%',
         overflow: 'scroll',
     },
-    label: {
-        fontSize: 16,
-        marginBottom: 5,
-    },
     input: {
         borderWidth: 1,
         borderColor: '#ccc',
-        padding: 10,
-        marginBottom: 15,
         borderRadius: 5,
         backgroundColor: 'black',
-    },
-    textInput: {
-        maxHeight: 40,
-    },
-    textArea: {
-        maxHeight: 80,
-    },
-    picker: {
-        height: 50,
-        maxHeight: 50,
-        marginBottom: 15,
     },
     clearButton: {
         alignSelf: 'flex-end',
@@ -255,7 +224,7 @@ const styles = StyleSheet.create({
     },
     innerBlock : {
         backgroundColor: 'blue',
-        borderRadius: 10,
+        borderRadius: 5,
         padding: 10,
     },
 });
